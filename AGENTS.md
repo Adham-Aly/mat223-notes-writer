@@ -1,12 +1,12 @@
 # Working on this repository
 
-This repo holds one agent skill, `skills/linear-algebra-lecture-notes-rewrite/`. It rewrites a chapter of a linear algebra course's lecture-notes textbook PDF into original, intuitive, lean typeset notes. Read this file before changing anything in the skill.
+This repo holds one agent skill, `skills/mat223-textbook-rewriter/`. It rewrites a chapter of a linear algebra course's lecture-notes textbook PDF into original, intuitive, lean typeset notes. Read this file before changing anything in the skill.
 
 ## What the skill is
 
 - A deliberately narrow skill. It accepts **only the course's lecture-notes textbook PDF** and one chapter or run of sections of it. Do not add support for other sources or formats (images, slides, videos, transcripts, pasted text).
 - Concepts are weighted by explanation-coverage levels and per-concept example entries recorded during recon. Proofs are decided by `with proof` / `stated without proof` bullets plus the user's testable-proof list.
-- The three files that carry behaviour are `SKILL.md` (the workflow), `references/recon-brief.md` (what recon subagents record) and `assets/template.html` (the document's building blocks). `scripts/` installs the typesetting toolchain into `~/.cache/la-notes-rewriter` and renders HTML to PDF; leave it alone unless the typesetting itself is the task.
+- The three files that carry behaviour are `SKILL.md` (the workflow), `references/recon-brief.md` (what recon subagents record) and `assets/template.html` (the document's building blocks). `scripts/` installs the typesetting toolchain into `~/.cache/mat223-textbook-rewriter` and renders HTML to PDF; leave it alone unless the typesetting itself is the task.
 
 ## The rules the skill lives by
 

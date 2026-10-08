@@ -1,5 +1,5 @@
 ---
-name: "linear-algebra-lecture-notes-rewrite"
+name: "mat223-textbook-rewriter"
 description: "Turn one chapter (or a run of sections) of the linear algebra course's lecture-notes textbook PDF into an original, intuitive, lean, LaTeX-typeset PDF. Not a summary or a paraphrase: a recon pass lists what the chapter covers by name, records every definition and theorem verbatim, marks the user's key items and the key theorems whose proofs are testable, and the document is then written from scratch without the textbook ever being looked at again. Use when the user names a chapter of these lecture notes and gives the list of key definitions/theorems and which of those theorems have testable proofs."
 ---
 
@@ -217,7 +217,7 @@ The document is authored as a single HTML file and printed to PDF with headless 
 Setup (idempotent; fast after the first run). Paths are relative to this skill's directory:
 
 ```bash
-bash scripts/setup.sh        # installs KaTeX + Chromium into ~/.cache/la-notes-rewriter, prints the KaTeX URL
+bash scripts/setup.sh        # installs KaTeX + Chromium into ~/.cache/mat223-textbook-rewriter, prints the KaTeX URL
 ```
 
 Start the HTML from `assets/template.html`: read it, replace `KATEX_DIST` (three places) with the URL that `setup.sh` printed, and write the document into the body using the template's building blocks (including the `tag` badges). Write it straight to its final path in the output directory. The CSS uses `KaTeX_Main`, a Computer Modern lookalike, for body text so prose and maths match. Maths goes in `$...$` (inline) and `$$...$$` (display).

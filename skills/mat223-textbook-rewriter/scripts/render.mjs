@@ -14,7 +14,7 @@ if (!src || !out) {
   process.exit(2);
 }
 
-const deps = process.env.LA_NOTES_DEPS || path.join(os.homedir(), '.cache', 'la-notes-rewriter');
+const deps = process.env.MAT223_DEPS || path.join(os.homedir(), '.cache', 'mat223-textbook-rewriter');
 let chromium;
 try {
   ({ chromium } = createRequire(path.join(deps, 'package.json'))('playwright'));
