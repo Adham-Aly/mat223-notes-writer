@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+*.pdf
+*.html
+!skills/**/assets/template.html
+*-recon.md
