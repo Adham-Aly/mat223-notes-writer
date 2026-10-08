@@ -217,7 +217,7 @@ The document is authored as a single HTML file and printed to PDF with headless 
 Setup (idempotent; fast after the first run). Paths are relative to this skill's directory:
 
 ```bash
-bash scripts/setup.sh        # installs KaTeX + Chromium into ~/.cache/math-notes-rewrite, prints the KaTeX URL
+bash scripts/setup.sh        # installs KaTeX + Chromium into ~/.cache/la-notes-rewriter, prints the KaTeX URL
 ```
 
 Start the HTML from `assets/template.html`: read it, replace `KATEX_DIST` (three places) with the URL that `setup.sh` printed, and write the document into the body using the template's building blocks (including the `tag` badges). Write it straight to its final path in the output directory. The CSS uses `KaTeX_Main`, a Computer Modern lookalike, for body text so prose and maths match. Maths goes in `$...$` (inline) and `$$...$$` (display).

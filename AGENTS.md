@@ -4,9 +4,9 @@ This repo holds one agent skill, `skills/linear-algebra-lecture-notes-rewrite/`.
 
 ## What the skill is
 
-- A deliberately narrow fork of a general `math-notes-rewrite` skill. The general skill accepts any maths source (PDFs, images, videos, transcripts); this one accepts **only the course's lecture-notes textbook PDF** and one chapter or run of sections of it. Do not add other formats back.
-- Its mechanism for weighting concepts (explanation coverage levels and per-concept example entries) was borrowed from a sibling `calc-notes-writer` skill. Its proof handling was not: this skill decides proofs by `with proof` / `stated without proof` bullets plus the user's testable-proof list.
-- The three files that carry behaviour are `SKILL.md` (the workflow), `references/recon-brief.md` (what recon subagents record) and `assets/template.html` (the document's building blocks). `scripts/` is shared, unmodified, with the parent skill and installs into `~/.cache/math-notes-rewrite`; leave it alone unless the typesetting itself is the task.
+- A deliberately narrow skill. It accepts **only the course's lecture-notes textbook PDF** and one chapter or run of sections of it. Do not add support for other sources or formats (images, slides, videos, transcripts, pasted text).
+- Concepts are weighted by explanation-coverage levels and per-concept example entries recorded during recon. Proofs are decided by `with proof` / `stated without proof` bullets plus the user's testable-proof list.
+- The three files that carry behaviour are `SKILL.md` (the workflow), `references/recon-brief.md` (what recon subagents record) and `assets/template.html` (the document's building blocks). `scripts/` installs the typesetting toolchain into `~/.cache/la-notes-rewriter` and renders HTML to PDF; leave it alone unless the typesetting itself is the task.
 
 ## The rules the skill lives by
 
@@ -28,7 +28,7 @@ These came from the owner, one at a time, and each is deliberate. Keep every one
 - When a change touches both what recon records and how the writer uses it, edit the brief and `SKILL.md` together: the brief's sample list, the rule itself, the "before you finish" checklist, `SKILL.md`'s recon-file description, its sample recon file, the assembly rules, the planning or leanness rule that consumes the new information, and the check step.
 - The brief's sample list and `SKILL.md`'s sample recon file should always show the current format, so subagents copy it.
 - After editing, tell the owner exactly what changed, file by file.
-- Never edit sibling skills (`math-notes-rewrite`, `calc-notes-writer`) when asked to take inspiration from them; read them only.
+- When asked to take inspiration from another skill, read it only; never edit it.
 - Do not commit generated outputs (`.pdf`, `.html` other than the template, `*-recon.md`); `.gitignore` already excludes them.
 
 ## Testing a change
