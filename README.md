@@ -1,4 +1,4 @@
-# mat223-textbook-rewriter
+# mat223-notes-writer
 
 An agent skill that turns one chapter of a linear algebra course's lecture-notes textbook (PDF) into an original, intuitive, lean, LaTeX-typeset PDF of notes.
 
@@ -7,17 +7,17 @@ It is not a summariser. A recon pass by subagents records what the chapter cover
 ## Install
 
 ```bash
-npx skills add Adham-Aly/mat223-textbook-rewriter
+npx skills add Adham-Aly/mat223-notes-writer
 ```
 
-Or copy `skills/mat223-textbook-rewriter/` into your agent's skills directory (for Claude Code, `~/.claude/skills/`).
+Or copy `skills/mat223-notes-writer/` into your agent's skills directory (for Claude Code, `~/.claude/skills/`).
 
 ## Use
 
 Invoke the skill with the chapter to cover, the key list and the testable-proof list. For example:
 
 ```
-/mat223-textbook-rewriter
+/mat223-notes-writer
 source: textbook.pdf
 cover: all of chapter 4 (4.1, 4.2, 4.3, 4.4), ignoring end-of-chapter exercises.
 
@@ -36,13 +36,13 @@ Output: `NAME.pdf`, the `NAME.html` it was typeset from, and `NAME-recon.md`, th
 ## Requirements
 
 - `pdftoppm` and `pdfinfo` (poppler) for rasterising pages
-- `node` and `npm` for KaTeX and headless Chromium (installed on first run by `scripts/setup.sh` into `~/.cache/mat223-textbook-rewriter`; set `MAT223_DEPS=/other/dir` to install somewhere else)
+- `node` and `npm` for KaTeX and headless Chromium (installed on first run by `scripts/setup.sh` into `~/.cache/mat223-notes-writer`; set `MAT223_DEPS=/other/dir` to install somewhere else)
 - An agent harness with subagents (the skill's locate and recon steps run in subagents so the main session never sees the textbook)
 
 ## Layout
 
 ```
-skills/mat223-textbook-rewriter/
+skills/mat223-notes-writer/
   SKILL.md                   the workflow: intake, locate, recon, the wall, write, typeset, check, deliver
   references/recon-brief.md  what recon subagents record, and how
   assets/template.html       HTML/CSS building blocks for the typeset document (boxes, badges, figures)
