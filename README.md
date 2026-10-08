@@ -36,7 +36,7 @@ Output: `NAME.pdf`, the `NAME.html` it was typeset from, and `NAME-recon.md`, th
 ## Requirements
 
 - `pdftoppm` and `pdfinfo` (poppler) for rasterising pages
-- `node` and `npm` for KaTeX and headless Chromium (installed on first run by `scripts/setup.sh` into `~/.cache/la-notes-rewriter`)
+- `node` and `npm` for KaTeX and headless Chromium (installed on first run by `scripts/setup.sh` into `~/.cache/la-notes-rewriter`; set `LA_NOTES_DEPS=/other/dir` to install somewhere else)
 - An agent harness with subagents (the skill's locate and recon steps run in subagents so the main session never sees the textbook)
 
 ## Layout
